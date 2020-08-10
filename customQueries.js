@@ -1,5 +1,5 @@
 //Indexes
-db.invoice.setIndex({ total: -1 });
+db.invoice.createIndex({ total: -1 });
 
 //Data Janitor
 db.invoice.update({
@@ -21,7 +21,8 @@ db.invoice.update({
     { moneda: "PESOS MEXICANOS" },
     { moneda: "pesos" },
     { moneda: "MX" },
-    { moneda: "PESOS MX"}
+    { moneda: "PESOS MX"},
+    { moneda: null}
   ]
 }, { $set: { moneda: 'MXN' } }, { multi: true });
 
