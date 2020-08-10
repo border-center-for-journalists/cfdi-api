@@ -7,9 +7,10 @@
 
 
 module.exports = {
-  read : async function(req,res){
+  read: async function(req, res) {
+    res.json('importing');
     const invoices = await sails.helpers.importXml();
-    res.json(invoices.length);
+    console.log('imported ' + invoices.lenght + 'invoices');
   }
 
 };

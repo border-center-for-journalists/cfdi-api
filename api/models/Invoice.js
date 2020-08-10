@@ -32,7 +32,7 @@ module.exports = {
   },
 
 };
-
+//invoice fields contain cfdi:<property name> remove cfdi:part if it exists and lower case first letter since not all invoices are capitalized
 function simplifyObject(object) {
   const keys = Object.keys(object);
   const obj = {};
