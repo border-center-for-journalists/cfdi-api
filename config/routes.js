@@ -9,6 +9,5 @@
  */
 
 module.exports.routes = {
-
-
+  'GET /entity/amounts/:id': 'EntityController.amounts',
 };
