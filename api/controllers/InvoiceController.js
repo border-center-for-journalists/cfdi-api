@@ -7,10 +7,15 @@
 
 
 module.exports = {
-  read: async function(req, res) {
+  /*read: async function(req, res) {
     res.json('importing');
-   // const invoices = await sails.helpers.importXml();
-    //console.log('imported ' + invoices.length + 'invoices');
+    const invoices = await sails.helpers.importXml();
+    console.log('imported ' + invoices.length + 'invoices');
   }
-
+*/
+  count: async function(req, res) {
+    let query = req.query.where ? JSON.parse(req.query.where) : undefined;
+    var numRecords = await Invoice.count(query);
+    res.json(numRecords);
+  }
 };
