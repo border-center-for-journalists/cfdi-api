@@ -37,5 +37,11 @@ module.exports.blueprints = {
    ***************************************************************************/
 
   //shortcuts: true,
- 
+  parseBlueprintOptions: function(req) {
+    var queryOptions = req._sails.hooks.blueprints.parseBlueprintOptions(req);
+    if (!req.param('populate', false) && !queryOptions.alias) {
+      queryOptions.populates = {};
+    }
+    return queryOptions;
+  }
 };
